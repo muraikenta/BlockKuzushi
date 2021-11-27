@@ -72,3 +72,5 @@ crashlytics-build.properties
 
 .vscode
 *.app
+.DS_Store
+Build
