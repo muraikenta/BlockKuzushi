@@ -1,4 +1,4 @@
 public static class DataSender
 {
-  public static string resultMessage;
+    public static string resultMessage = "";
 }
