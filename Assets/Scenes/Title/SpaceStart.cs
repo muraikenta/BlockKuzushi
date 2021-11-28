@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class SpaceStart : MonoBehaviour
 {
 
-  // Use this for initialization
-  void Start()
-  {
-
-  }
-
-  void FixedUpdate()
-  {
-    if (Input.GetKey(KeyCode.Space))
+    // Use this for initialization
+    void Start()
     {
-      SceneManager.LoadScene("MainScene");
+
     }
-  }
+
+    void FixedUpdate()
+    {
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
+    }
 }

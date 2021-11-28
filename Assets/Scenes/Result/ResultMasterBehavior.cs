@@ -11,7 +11,7 @@ public class ResultMasterBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.anyKey)
         {
             SceneManager.LoadScene("MainScene");
         }
