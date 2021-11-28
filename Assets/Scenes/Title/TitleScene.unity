@@ -405,7 +405,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1177225351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 620d5b5a4e2c44215bef5c00296ac5e6, type: 3}
+  m_Script: {fileID: 11500000, guid: a7df1f7c54f09483eb5345e2b8c5eba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1325427844
@@ -466,9 +466,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e49923ef5b5314ae2a1663c5f9fa8604, type: 3}
     m_FontSize: 40
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
@@ -478,7 +478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press space key to start
+  m_Text: "\u30BF\u30C3\u30D7\u3057\u3066\u958B\u59CB"
 --- !u!222 &1325427847
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -545,9 +545,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e49923ef5b5314ae2a1663c5f9fa8604, type: 3}
     m_FontSize: 64
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
