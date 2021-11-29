@@ -20,7 +20,6 @@ public class Destroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        masterObj.GetComponent<GameMaster>().boxNum--;
         ScoreManager.score.Value++;
         Destroy(gameObject);
     }

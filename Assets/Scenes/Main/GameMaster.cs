@@ -1,29 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UniRx;
 
 public class GameMaster : MonoBehaviour
 {
 
-    public int boxNum;
-    public float nowTime;
+    float nowTime;
 
     // Use this for initialization
     void Start()
     {
-        ScoreManager.score.Value = 0;
         nowTime = 0;
+        ScoreManager.score.Value = 0;
+        ScoreManager.score.Where(value => value >= Constants.BlockCount).Subscribe(value =>
+        {
+            GameOver(nowTime.ToString("F0") + "秒でクリアできた！");
+        });
     }
 
     // Update is called once per frame
     void Update()
     {
         nowTime += Time.deltaTime;
-        if (boxNum <= 0)
-        {
-            GameOver(nowTime.ToString("F0") + "秒でクリアできた！");
-        }
     }
 
     public void GameOver(string resultMessage)
