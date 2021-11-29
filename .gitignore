@@ -5,7 +5,6 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-/[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
@@ -73,5 +72,4 @@ crashlytics-build.properties
 .vscode
 *.app
 .DS_Store
-Build
 /[Aa]ssets/Plugins
