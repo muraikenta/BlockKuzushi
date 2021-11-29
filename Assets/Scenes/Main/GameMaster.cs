@@ -14,7 +14,7 @@ public class GameMaster : MonoBehaviour
         ScoreManager.score.Value = 0;
         ScoreManager.score.Where(value => value >= Constants.BlockCount).Subscribe(value =>
         {
-            GameOver(nowTime.ToString("F0") + "秒でクリアできた！");
+            GameOver();
         });
     }
 
@@ -24,9 +24,8 @@ public class GameMaster : MonoBehaviour
         nowTime += Time.deltaTime;
     }
 
-    public void GameOver(string resultMessage)
+    public void GameOver()
     {
-        DataSender.resultMessage = resultMessage;
         SceneManager.LoadScene("ResultScene");
     }
 }
