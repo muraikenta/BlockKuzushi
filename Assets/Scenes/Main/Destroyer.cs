@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-  public GameObject masterObj;
+    public GameObject masterObj;
 
-  // Use this for initialization
-  void Start()
-  {
+    // Use this for initialization
+    void Start()
+    {
 
-  }
+    }
 
-  // Update is called once per frame
-  void Update()
-  {
+    // Update is called once per frame
+    void Update()
+    {
 
-  }
+    }
 
-  private void OnCollisionEnter(Collision collision)
-  {
-    masterObj.GetComponent<GameMaster>().boxNum--;
-    Destroy(gameObject);
-  }
+    private void OnCollisionEnter(Collision collision)
+    {
+        masterObj.GetComponent<GameMaster>().boxNum--;
+        ScoreManager.score.Value++;
+        Destroy(gameObject);
+    }
 }

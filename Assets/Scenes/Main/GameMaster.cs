@@ -6,28 +6,29 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
 
-  public int boxNum;
-  public float nowTime;
+    public int boxNum;
+    public float nowTime;
 
-  // Use this for initialization
-  void Start()
-  {
-    nowTime = 0;
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-    nowTime += Time.deltaTime;
-    if (boxNum <= 0)
+    // Use this for initialization
+    void Start()
     {
-      GameOver(nowTime.ToString("F0") + "秒でクリアできた！");
+        ScoreManager.score.Value = 0;
+        nowTime = 0;
     }
-  }
 
-  public void GameOver(string resultMessage)
-  {
-    DataSender.resultMessage = resultMessage;
-    SceneManager.LoadScene("ResultScene");
-  }
+    // Update is called once per frame
+    void Update()
+    {
+        nowTime += Time.deltaTime;
+        if (boxNum <= 0)
+        {
+            GameOver(nowTime.ToString("F0") + "秒でクリアできた！");
+        }
+    }
+
+    public void GameOver(string resultMessage)
+    {
+        DataSender.resultMessage = resultMessage;
+        SceneManager.LoadScene("ResultScene");
+    }
 }
