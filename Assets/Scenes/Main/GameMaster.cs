@@ -5,23 +5,18 @@ using UniRx;
 public class GameMaster : MonoBehaviour
 {
 
-    float nowTime;
-
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
-        nowTime = 0;
-        ScoreManager.score.Value = 0;
-        ScoreManager.score.Where(value => value >= Constants.BlockCount).Subscribe(value =>
+        GameState.reset();
+        GameState.score.Where(value => value >= Constants.BlockCount).Subscribe(value =>
         {
             GameOver();
         });
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        nowTime += Time.deltaTime;
+        GameState.time.Value += Time.deltaTime;
     }
 
     public void GameOver()

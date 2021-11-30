@@ -20,7 +20,7 @@ public class Destroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        ScoreManager.score.Value++;
+        GameState.score.Value++;
         Destroy(gameObject);
     }
 }
