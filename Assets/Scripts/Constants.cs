@@ -1,4 +1,4 @@
 static class Constants
 {
-    public const int BlockCount = 40;
+    public static readonly int BlockCount = 40;
 }
