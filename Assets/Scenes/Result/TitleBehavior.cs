@@ -14,7 +14,6 @@ public class TitleBehavior : MonoBehaviour
         else
         {
             gameObject.GetComponent<Text>().text = "ゲームオーバー...";
-
         }
 
     }
