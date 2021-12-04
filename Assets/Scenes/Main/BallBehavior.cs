@@ -18,6 +18,15 @@ public class BallBehavior : MonoBehaviour
         this.ApplyMinSpeed();
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag != "Block") return;
+        gameObject.GetComponent<AudioSource>().Play();
+        GameState.score.Value++;
+        Destroy(collision.gameObject);
+    }
+
     void ApplyMinSpeed()
     {
         Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();

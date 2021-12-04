@@ -5,32 +5,31 @@ using UnityEngine;
 public class BlockInit : MonoBehaviour
 {
 
-  public GameObject boxObjPrefab;
-  public GameObject boxesObj;
+    public GameObject boxObjPrefab;
+    public GameObject boxesObj;
 
-  void Awake()
-  {
-    GameObject masterObj = GameObject.Find("Master");
-    for (int x = 0; x < 8; x++)
+    void Awake()
     {
-      for (int y = 0; y < 5; y++)
-      {
-        GameObject g = Instantiate(boxObjPrefab, boxesObj.transform);
-        g.transform.position = new Vector3((2f + (1f * y)), 0.4f, (-4.2f + (1.2f * x)));
-        g.GetComponent<Destroyer>().masterObj = masterObj;
-      }
+        GameObject masterObj = GameObject.Find("Master");
+        for (int x = 0; x < 8; x++)
+        {
+            for (int y = 0; y < 5; y++)
+            {
+                GameObject g = Instantiate(boxObjPrefab, boxesObj.transform);
+                g.transform.position = new Vector3((2f + (1f * y)), 0.4f, (-4.2f + (1.2f * x)));
+            }
+        }
     }
-  }
 
-  // Use this for initialization
-  void Start()
-  {
+    // Use this for initialization
+    void Start()
+    {
 
-  }
+    }
 
-  // Update is called once per frame
-  void Update()
-  {
+    // Update is called once per frame
+    void Update()
+    {
 
-  }
+    }
 }
