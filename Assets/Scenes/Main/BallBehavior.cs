@@ -33,7 +33,6 @@ public class BallBehavior : MonoBehaviour
             int direction = velocity.z > 0 ? 1 : -1;
             velocity.z = direction * minZSpeed;
             rigidbody.velocity = velocity;
-            // rigidbody.AddForce(new Vector3(0, 0, direction * 100));
         }
     }
 }
