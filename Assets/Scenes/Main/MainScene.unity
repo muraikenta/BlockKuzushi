@@ -1571,8 +1571,8 @@ GameObject:
   - component: {fileID: 1445652284}
   - component: {fileID: 1445652283}
   - component: {fileID: 1445652282}
-  - component: {fileID: 1445652286}
   - component: {fileID: 1445652287}
+  - component: {fileID: 1445652286}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1669,6 +1669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5a16b6a60524291b5f064a17f1f312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minXSpeed: 1
+  minZSpeed: 1
 --- !u!54 &1445652287
 Rigidbody:
   m_ObjectHideFlags: 0
