@@ -2,8 +2,8 @@ using UnityEngine;
 public class BallBehavior : MonoBehaviour
 {
 
-    float minXSpeed = 4f;
-    float minZSpeed = 4f;
+    float minXSpeed = 3f;
+    float minZSpeed = 3f;
 
     // Use this for initialization
     void Start()
