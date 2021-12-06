@@ -19,13 +19,59 @@ public class BallBehavior : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Block") return;
+        switch (collision.gameObject.tag)
+        {
+            case "Block":
+                OnCollisionEnterBlock(collision);
+                break;
+            default:
+                return;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+
+        switch (collision.gameObject.tag)
+        {
+            case "Player":
+                OnCollisionExitPlayer(collision);
+                break;
+            default:
+                return;
+        }
+    }
+
+    void OnCollisionEnterBlock(Collision collision)
+    {
         gameObject.GetComponent<AudioSource>().Play();
         GameState.score.Value++;
         Destroy(collision.gameObject);
     }
+
+    void OnCollisionExitPlayer(Collision collision)
+    {
+        var delta = 5;
+        var rb = gameObject.GetComponent<Rigidbody>();
+
+        // debug時にPlayerの下側に衝突したときは無視
+        if (rb.velocity.x < 0) return;
+
+        // // TODO: joystick対応
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            // 左方向に進行方向を回転
+            rb.velocity = Quaternion.Euler(0, -30, 0) * rb.velocity;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            // 右方向に進行方向を回転
+            rb.velocity = Quaternion.Euler(0, 30, 0) * rb.velocity;
+        }
+    }
+
 
     void ApplyMinSpeed()
     {
