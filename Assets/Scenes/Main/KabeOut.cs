@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class KabeOut : MonoBehaviour
 {
+    [SerializeField] bool disabled = false;
 
     // Use this for initialization
     void Start()
@@ -17,6 +18,7 @@ public class KabeOut : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (disabled) return;
         GameObject.Find("Master").GetComponent<GameMaster>().GameOver();
     }
 }
