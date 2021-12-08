@@ -53,9 +53,7 @@ public class BallBehavior : MonoBehaviour
 
     void OnCollisionExitPlayer(Collision collision)
     {
-        var delta = 5;
         var rb = gameObject.GetComponent<Rigidbody>();
-
         // debug時にPlayerの下側に衝突したときは無視
         if (rb.velocity.x < 0) return;
 

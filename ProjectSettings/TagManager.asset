@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
+  - ship
+  - asteroid
+  - Joystick
   layers:
   - Default
   - TransparentFX

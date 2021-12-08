@@ -1,26 +1,19 @@
-// using System.Collections;
-// using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Controller : MonoBehaviour
 {
+    [Inject]
+    InputProvider inputProvider;
 
-  // Use this for initialization
-  void Start()
-  {
-    Application.targetFrameRate = 30;
-
-  }
-
-  void FixedUpdate()
-  {
-    if (Input.GetKey(KeyCode.LeftArrow))
+    // Use this for initialization
+    void Start()
     {
-      transform.position += transform.forward * 0.2f;
+        Application.targetFrameRate = 30;
     }
-    else if (Input.GetKey(KeyCode.RightArrow))
+
+    void FixedUpdate()
     {
-      transform.position -= transform.forward * 0.2f;
+        transform.position -= transform.forward * inputProvider.move() * 0.2f;
     }
-  }
 }
